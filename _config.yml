@@ -1,4 +1,4 @@
-title:            Bits and Pieces
+title:            Andew Shatnyy
 description:      "Web hacks and tips using JavaScript (Vanilajs, Backbone, Angular), Ruby (metaprogramming, Rails, EventMachine, Rack), Elixir."
 disqus_shortname: 
 reading_time:     true
@@ -13,17 +13,17 @@ owner:
   bio:            "Software engineer, CSS programmer, HTML developer. I also know MS Word!"
   email:          
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        
+  twitter:        https://twitter.com/AndrewShatnyy
   facebook:       
-  github:         
-  stackexchange:  
-  linkedin:       
+  github:         http://github.com/andrewshatnyy
+  stackexchange:  http://stackexchange.com/users/452646/andrew-shatnyy
+  linkedin:       http://www.linkedin.com/in/andrewshatnyy
   instagram:      
   flickr:         
   tumblr:         
   # For Google Authorship https://plus.google.com/authorship
   # google plus id, include the '+', eg +mmistakes
-  google_plus:    +yourid
+  google_plus:    113727722160663631092
 
 # Background image to be tiled on all pages
 background:
@@ -37,10 +37,8 @@ bing_verify:
 # Links to include in top navigation
 # For external links add external: true
 links:
-  - title: Theme Setup
-    url: /theme-setup
-  - title: External Link
-    url: http://mademistakes.com
+  - title: SoundCloud
+    url: https://soundcloud.com/andrewshatnyy
     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
