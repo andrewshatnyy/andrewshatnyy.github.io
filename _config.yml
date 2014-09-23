@@ -1,10 +1,11 @@
-title:            Andew Shatnyy
+title:            Overengineering
 description:      "Web hacks and tips using JavaScript (Vanilajs, Backbone, Angular), Ruby (metaprogramming, Rails, EventMachine, Rack), Elixir."
-disqus_shortname: 
+disqus_shortname: overengineering
 reading_time:     true
 words_per_minute: 200
 #Your site's domain goes here. Leave localhost server or blank when working locally.
-url:              http://localhost:4000
+# url:              http://localhost:4000
+url:                http://andrewshatnyy.com
 
 # Owner/author information
 owner:
@@ -13,11 +14,11 @@ owner:
   bio:            "Software engineer, CSS programmer, HTML developer. I also know MS Word!"
   email:          
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        https://twitter.com/AndrewShatnyy
+  twitter:        AndrewShatnyy
   facebook:       
-  github:         http://github.com/andrewshatnyy
+  github:         andrewshatnyy
   stackexchange:  http://stackexchange.com/users/452646/andrew-shatnyy
-  linkedin:       http://www.linkedin.com/in/andrewshatnyy
+  linkedin:       andrewshatnyy
   instagram:      
   flickr:         
   tumblr:         
@@ -29,8 +30,8 @@ owner:
 background:
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
+google_analytics: UA-41952409-1 
+google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
 bing_verify:         
 
@@ -68,4 +69,4 @@ kramdown:
     coderay_css: class
 
 include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "deploy.sh"]
