@@ -23,7 +23,7 @@ I went ahead and created a callback loop of [xhrHttpRequest](http://www.html5roc
 
 So here's the gist of a code that will remove all of your messages from Google voice.
 
-`WARNING: this code will delete everything from your account. So use it cautiously!`
+*WARNING: this code will delete everything from your account. So use it cautiously!*
 
 {% gist andrewshatnyy/7ff412c6a255f3100a4f %}
 
