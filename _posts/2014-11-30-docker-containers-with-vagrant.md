@@ -13,15 +13,15 @@ share: true
 
 This article requires some knowledge about [Vagrant](https://www.vagrantup.com/) and [Docker](https://www.docker.com).
 
-Almost any reasonable deploy process now requires a docker box. Docker is awesome but I'd rather have isolated environment for my containers.
+Almost any reasonable deploy process now requires a docker box. Docker is awesome but I'd rather have an isolated environment for my containers.
 
-Here is where vagrant's [docker priovider](https://docs.vagrantup.com/v2/docker/index.html) come in to play. Vagrant guys did a great job explaining abstraction [here](http://www.vagrantup.com/blog/feature-preview-vagrant-1-6-docker-dev-environments.html).
+Here is where vagrant's [docker priovider](https://docs.vagrantup.com/v2/docker/index.html) comes in to play. Vagrant guys did a great job explaining abstraction [here](http://www.vagrantup.com/blog/feature-preview-vagrant-1-6-docker-dev-environments.html).
 
 As always things are not so easy when you actually try to implement Vagrant Docker Proxy/Host on your own.
 
-After a day of googling errors resulted by `vagrant up` [I figured](https://github.com/phusion/open-vagrant-boxes/issues/12) that Vagrant is too green for automating Docker installation. 
+After a day of googling errors caused by `vagrant up` [I figured](https://github.com/phusion/open-vagrant-boxes/issues/12) that Vagrant is too green for automating Docker installation. 
 Another [issue](https://gist.github.com/kjellski/6158747) came up after I failed to install Docker on linux box.
-Even if you get Docker instaled you instantly get [permission error](https://github.com/docker/docker/issues/5314).
+Even if you get Docker instaled you instantly get [a permission error](https://github.com/docker/docker/issues/5314).
 
 All issues above fixed with custom `shell.sh` provision script:
 {% highlight bash %}
