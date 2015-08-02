@@ -11,6 +11,8 @@ comments: true
 share: true
 ---
 
+## Fun with Vagrant and Docker containers
+
 This article requires some knowledge about [Vagrant](https://www.vagrantup.com/) and [Docker](https://www.docker.com).
 
 Almost any reasonable deploy process now requires a docker box. Docker is awesome but I'd rather have an isolated environment for my containers.

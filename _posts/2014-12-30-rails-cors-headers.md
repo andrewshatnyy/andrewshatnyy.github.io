@@ -11,6 +11,8 @@ comments: true
 share: true
 ---
 
+## CORS headers in Rails stack ?
+
 When working with API it's important to set up [CORS headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) to support Web Client (Browser) requests.
 
 Common solution for most of Rails developers is to create `before_action` with custom headers.
