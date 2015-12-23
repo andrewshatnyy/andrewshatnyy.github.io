@@ -32,7 +32,7 @@ Write a function that walks that array in spiral and outputs:
 {% endhighlight %}
 
 
-## How to walk it spirally
+## How to walk it spirally (over engineered)
 
 Like always with programming there are tons of ways to tackle a problem. Only efficient solutions counts.
 
@@ -213,4 +213,85 @@ module.exports = {
   transpose: transpose,
   spiral: spiral
 };
+{% endhighlight %}
+
+Awesome, right? Well, NO.
+
+## How to really walk two-dimensional array spirally
+
+Obviously solution above is over engineered and most likely you won't get a job :(. It's fun to play with matrixes but when it comes to real life you should never use code above in production.
+
+Spiral problem solved by keeping track of the coordinates for the traversed two-dimensional array.
+
+* identify coordinates `topIndex`, `bottomIndex`, `leftIndex`, `rightIndex`
+{% highlight javascript %}
+[top ,o,o,o,  o]
+[left,o,o,o,  o]
+[o   ,o,o,o,rgt]
+[btm ,o,o,o,  o]
+{% endhighlight %}
+
+* keep reference of the current side being shaved off
+
+{% highlight javascript %}
+
+function spiral(array) {
+  var rows = array.length;
+  var columns = array[0].length;
+  var topIndex = 0;
+  var bottomIndex = rows - 1;
+  var leftIndex = 0;
+  var rightIndex = columns - 1;
+
+  var result = [];
+
+  var side = 'top';
+  var i;
+
+  while(topIndex <= bottomIndex && leftIndex <= rightIndex) {
+    
+    if (side === 'top') {
+      for(i = leftIndex; i <= rightIndex; i++) {
+        result.push(array[topIndex][i]);
+      }
+      topIndex++;
+      side = 'right';
+      continue;
+    }
+    if (side === 'right') {
+      for(i = topIndex; i <= bottomIndex; i++) {
+        result.push(array[i][rightIndex]);
+      }
+      rightIndex--;
+      side = 'bottom';
+      continue;
+    }
+    if (side === 'bottom') {
+      for(i = rightIndex; i >= leftIndex; i--) {
+        result.push(array[bottomIndex][i]);
+      }
+      bottomIndex--;
+      side = 'left';
+      continue;
+    }
+    if (side === 'left') {
+      for(i = bottomIndex; i >= topIndex; i--) {
+        result.push(array[i][leftIndex]);
+      }
+      leftIndex++;
+      side = 'top';
+      continue;
+    }
+  }
+
+  return result.join(',');
+
+}
+{% endhighlight %}
+
+
+Function above runs 80% faster than overengineered solution in which you need to rotate arrays.
+
+{% highlight bash %}
+spiral x 882,768 ops/sec ±0.80% (84 runs sampled)
 {% endhighlight %}
