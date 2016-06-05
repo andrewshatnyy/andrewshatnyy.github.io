@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: 
+
+Sitemap: http://andrewshatnyy.com/sitemap.xml.gz
+
