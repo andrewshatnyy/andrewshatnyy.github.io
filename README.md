@@ -1,3 +1,3 @@
-# Andrew Shatnyy's block
+# Andrew Shatnyy's blog
 
 [check it out here](http://andrewshatnyy.github.io/)
