@@ -8,4 +8,7 @@ gem 'thor'
 gem 'activesupport'
 gem 'rouge'
 gem 'stringex'
-gem 'jekyll-compose', group: [:jekyll_plugins]
+group :jekyll_plugins do
+ gem 'jekyll-compose'
+ gem 'jekyll-crosspost-to-medium'
+end
