@@ -8,7 +8,10 @@ gem 'thor'
 gem 'activesupport'
 gem 'rouge'
 gem 'stringex'
+gem 'ruby-oembed' 
 group :jekyll_plugins do
- gem 'jekyll-compose'
- gem 'jekyll-crosspost-to-medium'
+  gem 'jekyll-gist'
+  gem 'jekyll-paginate'
+  gem 'jekyll-compose'
+  gem 'jekyll-crosspost-to-medium'
 end

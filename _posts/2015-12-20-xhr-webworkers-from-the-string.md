@@ -12,7 +12,7 @@ share: true
 ---
 
 
-##Loading Images as binary with Webworker built from the function
+## Loading Images as binary with Webworker built from the function
 
 Few months ago I had to read binary image data from s3 with XHRHttpRequest and then parse ExIf header to determine its orientation.
 
@@ -20,15 +20,15 @@ I had to load and parse numerous images asynchronously. Tried executing it all i
 
 Just loading binary image data is a problem.
 
-I am not going to describe the basics of Webworkers in this post. [Html5 Rocks](http://www.html5rocks.com/en/tutorials/workers/basics/) explained it with better English in 2010.
-Please read that linked article. Your future self with thank you for investing your time in this.
+I am not going to describe the basics of Webworkers in this post. [Html5 Rocks](http://www.html5rocks.com/en/tutorials/workers/basics/) explained it with much better English in 2010.
+Please read that linked article, your future self will thank you for investing time in this.
 
-###Goal:
-load and parse images in separate threads and then later pass them (with metadata) to the main thread.
+### Goal:
+Load and parse images in separate threads and then pass their metadata to the main thread.
 
-My biggest problem with default Webworker loader is versioning and maintenance of separate files. I don’t like extra dependencies unless I need to support unstable versions of browsers.
+My biggest problems with default Webworker loader are versioning and maintenance of separate files. I don’t like extra dependencies in my code unless I must support unstable versions of browsers.
 
-###How:
+### How:
 You can create a Webworker with just a blob of javascript.
 
 {% highlight javascript %}

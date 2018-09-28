@@ -34,7 +34,7 @@ Write a function that walks that array in spiral and outputs:
 
 ## How to walk it spirally (over engineered)
 
-Like always with programming there are tons of ways to tackle a problem. Only efficient solutions counts.
+Like always with programming there are tons of ways to tackle a problem. However, only efficient solutions counts.
 
 Here's my take on this one:
 
@@ -47,33 +47,33 @@ var array = [
     [4,5,6],
     [7,8,9]
 ];
-// shave 1
+// shave 1 (top)
 var result = [1,2,3];
 
 var array = [
     [4,5,6],
     [7,8,9]
 ];
-// shave 2
+// shave 2 (right)
 var result = [1,2,3,6,9];
 
 var array = [
     [4,5],
     [7,8]
 ];
-// shave 3
+// shave 3 (bottom)
 var result = [1,2,3,6,9,8,7];
 
 var array = [
     [4,5]
 ];
-// shave 4
+// shave 4 (left)
 var result = [1,2,3,6,9,8,7,4];
 
 var array = [
     [5]
 ];
-// shave 5
+// shave 5 (top)
 var result = [1,2,3,6,9,8,7,4,5];
 
 var array = [
@@ -83,13 +83,13 @@ var array = [
 return result.join(',');
 {% endhighlight %}
 
-Hold ye horses sire... How the hell did you shave other sides off???
+"Hold ye horses sire... How the hell did you shave sides off?", I hear you cry.
 
 The answer is that we have to [transpose](https://en.wikipedia.org/wiki/Transpose) the matrix every time before we take off one side. But not the first time!
 
-Basically we need to turn that two-dimensional array -90°.
+Basically we need to turn that two-dimensional array -90° and take the top off (shave).
 
-In any case we just identified two main functions here
+In any case, we've just identified two main functions here
 
 * `transpose` to turn the matrix
 * `spiral`  to shave off top row
@@ -104,7 +104,7 @@ In any case we just identified two main functions here
 [1,4,7]
 {% endhighlight %}
 
-Let's write some tests for identified functions
+Let's write some tests for these functions
 
 {% highlight javascript %}
 var M = require('../lib/matrix');
@@ -190,7 +190,7 @@ function transpose(array) {
       resultColumnIndex,
       rowIndex;
   
-  // turn mattrix
+  // turn matrix
   // [o,o,x]
   // [o,o,x]
   // into
@@ -219,11 +219,12 @@ Awesome, right? Well, NO.
 
 ## How to really walk two-dimensional array spirally
 
-Obviously solution above is over engineered and most likely you won't get a job :(. It's fun to play with matrixes but when it comes to real life you should never use code above in production.
+Obviously, the solution above is over engineered and most likely you won't get a job :(. It's fun to play with matrixes but when it comes to real life you should never use code described above in production.
 
-Spiral problem solved by keeping track of the coordinates for the traversed two-dimensional array.
+The spiral problem is solved by keeping track of the coordinates for the traversed two-dimensional array.
 
 * identify coordinates `topIndex`, `bottomIndex`, `leftIndex`, `rightIndex`
+
 {% highlight javascript %}
 [top ,o,o,o,  o]
 [left,o,o,o,  o]
@@ -231,7 +232,7 @@ Spiral problem solved by keeping track of the coordinates for the traversed two-
 [btm ,o,o,o,  o]
 {% endhighlight %}
 
-* keep reference of the current side being shaved off
+* keep a reference of a current side being shaved off
 
 {% highlight javascript %}
 
@@ -290,7 +291,7 @@ function spiral(array) {
 {% endhighlight %}
 
 
-Function above runs 80% faster than overengineered solution in which you need to rotate arrays.
+Function above runs 80% faster than overengineered solution, in which you need to rotate arrays.
 
 {% highlight bash %}
 spiral x 882,768 ops/sec ±0.80% (84 runs sampled)

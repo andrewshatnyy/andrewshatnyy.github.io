@@ -59,16 +59,28 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: true
+  enable_coderay: true
 
-  coderay:
-    coderay_line_numbers: nil
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
+coderay:
+  coderay_line_numbers: nil
+  coderay_line_numbers_start: 1
+  coderay_tab_width: 4
+  coderay_bold_every: 10
+  coderay_css: class
 
 include: [".htaccess"]
 exclude: ["bin", "Dockerfile","lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "deploy.sh"]
 
+jekyll-crosspost_to_medium:
+  enabled: true
+  cache: .jekyll-crosspost_to_medium
+  status: draft
+  backdate: true
+
+
 host: 0.0.0.0
+gems:
+  - jekyll-compose
+  - jekyll-crosspost-to-medium
+  - jekyll-paginate
+  - jekyll-gist
